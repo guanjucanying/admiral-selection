@@ -1,8 +1,18 @@
 :root {
-    --primary-color: #ff9854;
+    --primary-color: #ff9854 !important;
     --van-tabbar-item-icon-size: 30px !important;
+    --van-search-left-icon-color:var(--primary-color) !important;
+    /* --van-tab-active-text-color:var(--primary-color) !important; */
 }
 
 body {
     font-size: 14px;
+}
+
+.top-page {
+    position: relative;
+    z-index: 9;
+    height: 100vh;
+    background-color: #fff;
+    overflow-y: auto;
 }

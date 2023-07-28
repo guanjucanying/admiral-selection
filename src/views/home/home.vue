@@ -4,18 +4,13 @@
         <div class="banner">
             <img src="@/assets/img/home/banner.png" alt="">
         </div>
-        <div class="location">
-            <div class="city">广州</div>
-            <div class="position">
-                <span class="text">我的位置</span>
-                <img src="@/assets/img/home/icon_location.png" alt="">
-            </div>
-        </div>
+        <home-search-box></home-search-box>
     </div>
 </template>
 
 <script setup>
     import homeNavBar from './cpns/home-nav-bar.vue';
+    import homeSearchBox from './cpns/home-search-box.vue'
 </script>
 
 <style lang="less" scoped>
@@ -42,9 +37,10 @@
         width: 88px;
         display: flex;
         align-items: center;
+        color: #666;
         
         .text {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         img {
