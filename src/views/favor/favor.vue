@@ -1,5 +1,5 @@
 <template>
-    <div class="favor">
+    <div class="favor" ref="favorRef">
         <template v-for="(item) in 100" :key="index">
             <div>列表数据：{{ item }}</div>
         </template>
@@ -7,6 +7,12 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import useScroll from '../../hooks/useScroll';
+
+const favorRef = ref()
+
+useScroll(favorRef)
 
 </script>
 
