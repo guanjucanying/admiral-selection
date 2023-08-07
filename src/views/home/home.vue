@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home" ref="homeRef">
         <home-nav-bar></home-nav-bar>
         <div class="banner">
             <img src="@/assets/img/home/banner.png" alt="">
@@ -10,13 +10,14 @@
             <search-bar :start-date="'09.19'" :end-date="'09.20'"/>
         </div>
         <home-content/>
-        <!-- <button @click="moreBtnClick">加载更多</button> -->
-        <!-- <home-search-input></home-search-input> -->
     </div>
 </template>
 
+<script>
+    export default { name: "home" }
+</script>
 <script setup>
-    import { watch, computed } from 'vue';
+    import { watch, computed, ref, onActivated } from 'vue';
     import homeNavBar from './cpns/home-nav-bar.vue';
     import homeSearchBox from './cpns/home-search-box.vue'
     import homeCategories from './cpns/home-categories.vue'
@@ -66,7 +67,8 @@
 // useScroll(() => {
 //     homeStore.fetchHouseListData()
 // })
-const { isReachBottom, scrollTop} = useScroll()
+const homeRef = ref()
+const { isReachBottom, scrollTop} = useScroll(homeRef)
 watch(isReachBottom, (newValue) => {
     if(newValue) {
         homeStore.fetchHouseListData().then(() => {
@@ -83,11 +85,20 @@ const isShowSearchBar = computed(() => {
     return scrollTop.value >= 360
 })
 
+//记录回来的值
+onActivated(() => {
+    homeRef.value?.scrollTo({
+        top: scrollTop.value
+    })
+})
 
 </script>
 
 <style lang="less" scoped>
 .home {
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
     padding-bottom: 60px; 
 }
 .banner {
