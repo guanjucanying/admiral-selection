@@ -6,7 +6,7 @@
       </keep-alive>
     </router-view>
     <!-- <tab-bar ></tab-bar> -->
-    <tab-bar v-if="!route.meta.hideTabBar" class="tabbar"></tab-bar>
+    <tab-bar v-show="!route.meta.hideTabBar" class="tabbar"></tab-bar>
     <loading />
   </div>
 </template>
