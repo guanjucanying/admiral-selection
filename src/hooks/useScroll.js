@@ -1,7 +1,6 @@
 import { onMounted,  onUnmounted, ref} from 'vue'
 import { throttle } from 'underscore'
 
-// console.log(throttle)
 
 export default function useScroll(elRef) {
     let el = window

@@ -18,10 +18,10 @@ const tabbarData = [
         path: "/order"
     },
     {
-        text: "消息",
-        image: "tabbar/tab_message.png",
-        imageActive: "tabbar/tab_message.png",
-        path: "/message"
+        text: "我的",
+        image: "tabbar/4_01.jpg",
+        imageActive: "tabbar/4_01.jpg",
+        path: "/mine"
     }
 ]
 

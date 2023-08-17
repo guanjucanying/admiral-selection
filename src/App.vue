@@ -15,7 +15,6 @@
 import { useRoute } from "vue-router"
 import TabBar from "@/components/tab-bar/tab-bar.vue"
 import Loading from "./components/loading/loading.vue"
-
 const route = useRoute()
 
 </script>

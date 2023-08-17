@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { BASE_URL,TIMEOUT } from './config'
+import { BASE_URL,BASE_URL_1,TIMEOUT } from './config'
 import useMainStore from '../../stores/modules/main'
+// import token from '../../hooks/useToken'
 
 const mainStore = useMainStore()
 
@@ -8,11 +9,18 @@ class ASRequest {
   constructor(baseURL, timeout=10000) {
     this.instance = axios.create({
       baseURL,
-      timeout
+      timeout,
     })
 
     this.instance.interceptors.request.use(config => {
       mainStore.isLoading = true
+      const access_token = localStorage.getItem('access_token')
+      const refresh_token = localStorage.getItem('refresh_token')
+      config.headers={
+        // ...config.headers,
+        "access_token": access_token,
+        "refresh_token": refresh_token
+      }
       return config
     }, err => {
       return err
@@ -48,5 +56,7 @@ class ASRequest {
   }
 }
 
+export const ASRequest1 = new ASRequest(BASE_URL_1, TIMEOUT)
 export default new ASRequest(BASE_URL, TIMEOUT)
+
 

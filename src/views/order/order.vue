@@ -1,6 +1,6 @@
 <template>
     <div class="order">
-        <h2>order</h2>
+        <div>order</div>
     </div>
 </template>
 

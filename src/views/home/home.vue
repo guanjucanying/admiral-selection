@@ -77,10 +77,6 @@ watch(isReachBottom, (newValue) => {
     }
 })
 
-// const isShowSearchBar = ref(false)
-// watch(scrollTop, (newTop) => {
-//     isShowSearchBar.value = newTop > 100
-// })
 const isShowSearchBar = computed(() => {
     return scrollTop.value >= 360
 })

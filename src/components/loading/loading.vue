@@ -5,7 +5,7 @@
         @click="loadingClick"
         >
             <div class="bg">
-                <img src="@/assets/img/home/full-screen-loading.gif " alt="">
+                <img src="@/assets/img/home/request-loading.gif " alt="">
             </div>
         </div>
 </template>
