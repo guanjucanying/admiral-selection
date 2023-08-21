@@ -10,9 +10,3 @@ export function login(user_name, password) {
     })
 }
 
-export function register(data) {
-    return ASRequest1.post({
-        url: 'user/register',
-        data
-    })
-}

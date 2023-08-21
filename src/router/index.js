@@ -69,6 +69,14 @@ const router = createRouter({
             meta: {
                 hideTabBar: true
             }
+        },
+        {
+            name: "register",
+            path: "/register",
+            component: () => import("@/views/register/register.vue"),
+            meta: {
+                hideTabBar: true
+            }
         }
     ]
 })

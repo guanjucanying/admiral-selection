@@ -1,8 +1,9 @@
 <template>
     <div class="favor" ref="favorRef">
-        <template v-for="(item) in 100" :key="index">
+        <!-- <template v-for="(item) in 100" :key="index">
             <div>列表数据：{{ item }}</div>
-        </template>
+        </template> -->
+        favor
     </div>
 </template>
 
@@ -17,9 +18,9 @@ useScroll(favorRef)
 </script>
 
 <style lang="less" scoped>
-.favor {
-    height: 300px;
-    background: orange;
-    overflow-y: auto;
-}
+// .favor {
+//     height: 300px;
+//     background: orange;
+//     overflow-y: auto;
+// }
 </style>

@@ -80,13 +80,6 @@ import useMainStore from '@/stores/modules/main';
     const startDateStr = computed(() => formatMonthDay(startDate.value))
     // console.log(startDateStr)
     const endDateStr = computed(() => formatMonthDay(endDate.value))
-// const nowDate = new Date()
-// const newDate = new Date()
-// newDate.setDate(nowDate.getDate() + 1)
-// const startDateStr = ref(formatMonthDay(startDate))
-// console.log(startDateStr)
-// const endDate = ref(formatMonthDay(newDate))
-// endDate.setDate(startDate.getDate() + 1)
 
 
     const homeStore = useHomeStore()

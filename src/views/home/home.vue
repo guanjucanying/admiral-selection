@@ -23,50 +23,14 @@
     import homeCategories from './cpns/home-categories.vue'
     import homeContent from './cpns/home-content.vue'
     import searchBar from '@/components/search-bar/search-bar.vue';
-    // import homeSearchInput from './cpns/home-search-input.vue'
-    // import asRequest from '@/service/request/index'
     import useHomeStore from '../../stores/modules/home';
     import useScroll from '@/hooks/useScroll'
 
-    // const hotSuggests = ref([])
-    // asRequest.get({
-    //     url: "/home/hotSuggests"
-    // }).then(res => {
-    //     hotSuggests.value = res.data
-    // })
     const homeStore = useHomeStore()
     homeStore.fetchHotSuggestData()
     homeStore.fetchCategoriesData()
-    // let currentPage = 1
     homeStore.fetchHouseListData()
 
-    // const moreBtnClick = () => {
-    //     console.log("加载更多")  
-    //     homeStore.fetchHouseListData()
-    // }
-// const scrollListenerHandler = () => {
-//     const clientHeight = document.documentElement.clientHeight
-//     const scrollTop = document.documentElement.scrollTop
-//     const scrollHeight = document.documentElement.scrollHeight
-//     if(clientHeight + scrollTop >= scrollHeight) {
-//         homeStore.fetchHouseListData()
-//     }
-// }
-
-// onMounted(() => {
-//     window.addEventListener("scroll", scrollListenerHandler)   
-// })
-
-// // onActivated(() => {
-
-// // })
-
-// onUnmounted(() => {
-//     window.removeEventListener("scroll", scrollListenerHandler)
-// })
-// useScroll(() => {
-//     homeStore.fetchHouseListData()
-// })
 const homeRef = ref()
 const { isReachBottom, scrollTop} = useScroll(homeRef)
 watch(isReachBottom, (newValue) => {

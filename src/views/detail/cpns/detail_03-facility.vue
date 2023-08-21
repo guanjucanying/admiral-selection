@@ -1,5 +1,5 @@
 <template>
-    <div class="facility">
+    <div class="facility" >
         <detail-section title="房屋设施" more-text="查看全部设施">
             <div class="facility-inner">
                 <template v-for="(item, index) in houseFacility.houseFacilitys" :key="index">
@@ -32,6 +32,7 @@ defineProps({
         default: () => {}
     }
 })
+
 
 </script>
 

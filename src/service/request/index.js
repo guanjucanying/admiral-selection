@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { BASE_URL,BASE_URL_1,TIMEOUT } from './config'
 import useMainStore from '../../stores/modules/main'
+import { ref } from 'vue'
 // import token from '../../hooks/useToken'
 
 const mainStore = useMainStore()
@@ -16,11 +17,18 @@ class ASRequest {
       mainStore.isLoading = true
       const access_token = localStorage.getItem('access_token')
       const refresh_token = localStorage.getItem('refresh_token')
-      config.headers={
-        // ...config.headers,
-        "access_token": access_token,
-        "refresh_token": refresh_token
-      }
+      // config.headers={
+      //   // ...config.headers,
+      //   "access_token": access_token,
+      //   "refresh_token": refresh_token
+      // }
+      // if(access_token) {
+        config.headers['access_Token'] = access_token;
+      // }
+      // if(refresh_token) {
+        config.headers['refresh_Token'] = refresh_token;
+      // }
+
       return config
     }, err => {
       return err
@@ -53,6 +61,14 @@ class ASRequest {
 
   post(config) {
     return this.request({ ...config, method: "post" })
+  }
+
+  put(config) {
+    return this.request({ ...config, method: "put"})
+  }
+
+  delete(config) {
+    return this.request({ ...config, method: "delete"})
   }
 }
 
